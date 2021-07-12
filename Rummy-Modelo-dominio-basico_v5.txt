@@ -1,0 +1,104 @@
+@startuml
+
+title Rummy domain model
+
+class Rummy {
+   TOKENS_TOTALES = TOKENS_RED + TOKENS_BLUE + TOKENS_BLACK + TOKENS_GREEN + TOKENS_WILDCARD
+   TOKENS_RED = 26
+   TOKENS_BLUE = 26
+   TOKENS_BLACK = 26
+   TOKENS_GREEN = 26
+   TOKENS_WILDCARD = 2
+   TOKEN_PER_PLAYER = 14
+   NUM_PLAYERS = 2
+   NUM_INITIAL_POINTS = 30
+   play()
+}
+
+Rummy *--> "2..4" Player
+Table *--> "106" Tile
+Rummy *--> Table
+Rummy *--> Turn
+Turn --> Player
+Player --> Table
+Tile --> Color
+Table *--> Pounch
+Pounch --> "n" Tile
+Tile <|-- WildCard
+Player *--> "1..n" Action
+
+Action <|-- TilesDown
+Action <|-- TileExtraction
+Action <|-- GroupsMovement
+TilesDown --> "1..n" Tile
+TilesDown --> TilesGroup
+GroupsMovement --> "1..n" TilesGroup
+TileExtraction --> Pounch: Origin
+TileExtraction --> Rack: Target
+
+class Turn {
+  +play()
+}
+
+class Player {
+  +isWinner()
+}
+
+Player *--> Rack
+Rack *--> "n" Tile
+
+class Rack {
+  
+}
+
+class Table {
+  init()
+}
+
+class Pounch {
+    
+}
+
+class Tile {
+   -number
+}
+
+Table *--> "n" TilesGroup
+
+class TilesGroup {
+  
+}
+
+TilesGroup --> "n" Tile
+
+TilesGroup <|-- Run
+TilesGroup <|-- Serie
+
+enum Color {
+  BLACK,
+  RED,
+  BLUE,
+  YELLOW
+}
+
+
+note bottom of Rack
+   Plataforma donde 
+   el jugador tiene
+   sus fichas
+end note
+
+note top of GroupsMovement 
+   Movimientos 
+   de grupos
+   en la mesa
+end note
+
+note top of TilesDown 
+   Fichas que 
+   se van a 
+   bajar a la 
+   mesa.
+end note
+
+@enduml
