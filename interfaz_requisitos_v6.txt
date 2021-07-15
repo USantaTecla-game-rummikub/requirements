@@ -1,10 +1,12 @@
 RUMMY
 
-Opciones posibles: PUT para poner fichas en la mesa, MOV para mover fichas entre grupos, END para terminar turno. HELP para mas opciones.
+Possible options: PUT to put tiles on the table, MOV to move tiles between groups, END to end turn or extract tile. 
+                  HELP for more options.
 
-HELP: EXIT para salir del juego, SAVE para guardar la partida, UNDO para deshacer una jugada, REDO para rehacer una jugada
+HELP: EXIT to exit the game, SAVE to save the game, UNDO to undo move, REDO to redo move
 
-Ejem: PUT 10B 10G 10R IN 2
+Ejem: Put on group 2 of the table the combination 10B 10G 10R
+  PUT 10B 10G 10R IN 2 
 
 -------------------------------------------------------------------------------------------------------------
 Pouch 78 tiles
@@ -14,15 +16,18 @@ Player 1: (14)
 
 Table  (Empty)
 
-Indica operación a realizar: PUT 3R 3Y 3G
+What action do you want to do?: PUT 3R 3Y 3G
 	¡¡ Attention, the first combination should add at least 30 points !!
        
 
-¿Que movimiento quiere hacer?: PUT 3G 4G 5G 6G
+What action do you want to do?: PUT 3G 4G 5G 6G
 	¡¡ Attention, the first combination should add at least 30 points !!
 
 
-¿Que acción quieres hacer?: END
+What action do you want to do?: END
+  You have extracted the tile 6B
+  Player 1: (15)
+  1R 8R 4R 3R 9R | 1G 3G 10G 5G 6G 4G | 7B 2B 6B | 3Y   
 
 ------------------------------------------------------------------------------------------------------------
 Pouch 77 tiles
@@ -32,7 +37,7 @@ Player 2: (14)
 
 Table  (Empty)
 
-Indica operación a realizar: PUT 10R 10G 10B
+What action do you want to do?: PUT 10R 10G 10B
 
 Player 2: (11)
    8R 4R 11R | 2G 13G 7G 8G 5G | 6B 9B | J
@@ -40,7 +45,7 @@ Player 2: (11)
 Table: (3)  
 1. [10R 10G 10B]
 
-Indica operación a realizar: END
+What action do you want to do?: END
 
 ------------------------------------------------------------------------------------------------------------  
 
@@ -49,18 +54,14 @@ Pouch 77 tiles
 Player 1: (15)
   1R 8R 4R 3R 9R | 1G 3G 10G 5G 6G 4G | 7B 2B 6B | 3Y  
 
-Table    
+Table (3)    
 1. [10R 10G 10B]
 
-Indica acción a realizar: END
+What action do you want to do?: END
 
+You have extracted the tile 8B
 Player 1: (16)
    1R 8R 4R 3R 9R | 1G 3G 10G 5G 6G 4G | 7B 2B 6B 8B | 3Y 
-
-Table    
-1. [10R 10G 10B]
-
-Indica operación a realizar: END
 
 -------------------------------------------------------------------------------------------------------------
 
@@ -72,7 +73,7 @@ Player 2: (11)
 Table
 1. [10R 10G 10B]
 
-¿Que acción quieres realizar?: PUT 7G 8G J1
+What action do you want to do?: PUT 7G 8G J
 
 Player 2: (8)
    8R 4R 11R | 2G 13G 5G | 6B 9B
@@ -81,7 +82,7 @@ Table
 1. [10R 10G 10B] 
 2. [7G 8G J]
 
-Indica operación a realizar: END
+What action do you want to do?: END
 
 --------------------------------------------------------------------------------------------------------------
 
@@ -94,7 +95,7 @@ Table
 1. [10R 10G 10B] 
 2. [7G 8G J]
 
-¿Que acción quieres realizar?: PUT 3G 4G 5G 6G, 6B 7B 8B
+What action do you want to do?: PUT 3G 4G 5G 6G, 6B 7B 8B
 
 Player 1: (9)
    1R 8R 4R 3R 9R | 1G 10G | 2B | 3Y 
@@ -105,7 +106,7 @@ Table
    3.[3G 4G 5G 6G]  
    4.[6B 7B 8B]
 
-Indica operación a realizar: END
+What action do you want to do?: END
 
 ---------------------------------------------------------------------------------------------------------------
 
@@ -120,14 +121,14 @@ Table
    3. [3G 4G 5G 6G]  
    4. [6B 7B 8B]
 
-¿Que acción quieres realizar?: MOV 3G 4G 5G 6G IN 2
+What action do you want to do?: MOV 3G 4G 5G 6G IN 2
 
 Table (14)
    1.[10R 10G 10B]  
    2.[3G 4G 5G 6G 7G 8G J]  
-   4.[6B 7B 8B 9B]
+   4.[6B 7B 8B]
 
-¿Que acción quieres realizar?: PUT 9B IN 4, 2G IN 2
+What action do you want to do?: PUT 9B IN 4, 2G IN 2
 
 Player 2: (7)
    8R 4R 11R | 13G 5G | 6B
@@ -137,7 +138,7 @@ Table (15)
    2.[2G 3G 4G 5G 6G 7G 8G J]  
    4.[6B 7B 8B 9B]
 
-Indica operación a realizar: END
+What action do you want to do?: END
 
 ---------------------------------------------------------------------------------------------------------------
 
@@ -151,7 +152,7 @@ Table (15)
    2.[2G 3G 4G 5G 6G 7G 8G J]  
    4.[6B 7B 8B 9B]
 
-¿Que acción quieres realizar?: PUT 1G 10G IN 2
+What action do you want to do?: PUT 1G 10G IN 2
 
 Player 1: (9)
     1R 8R 4R 3R 9R | 2B | 3Y 
@@ -161,10 +162,10 @@ Table (17)
    2.[1G 2G 3G 4G 5G 6G 7G 8G J 10G]  
    4.[6B 7B 8B 9B]
 
-¿Que acción quieres realizar?: HELP
-    EXIT para salir del juego, SAVE para guardar la partida, UNDO para deshacer una jugada, REDO para rehacer una jugada
+What action do you want to do?: HELP
+    EXIT to exit the game, SAVE to save the game, UNDO to undo move, REDO to redo move
 
-¿Que acción quieres realizar? 
+What action do you want to do? 
 
 
   
